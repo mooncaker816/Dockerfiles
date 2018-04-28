@@ -4,7 +4,7 @@ default: docker_build
 build: docker_build output
 
 # Image and binary can be overidden with env vars.
-DOCKER_IMAGE ?= mooncaker816/Caddy-Hugo
+DOCKER_IMAGE ?= mooncaker816/caddy-hugo
 BINARY ?= microscaling
 
 CODE_VERSION = $(strip $(shell cat VERSION))

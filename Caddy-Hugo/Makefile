@@ -3,6 +3,9 @@ default: docker_build
 # Build Docker image
 build: docker_build output
 
+# Build and push Docker image
+release: docker_build docker_push output
+
 # Image and binary can be overidden with env vars.
 DOCKER_IMAGE ?= mooncaker816/caddy-hugo
 BINARY ?= microscaling

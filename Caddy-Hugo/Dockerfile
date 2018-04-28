@@ -69,7 +69,7 @@ RUN /usr/bin/upx --ultra-brute /usr/bin/caddy /usr/bin/hugo
 # test
 RUN /usr/bin/caddy -version
 RUN /usr/bin/caddy -plugins
-RUN /usr/bin/hugo -version
+RUN /usr/bin/hugo version
 
 
 #

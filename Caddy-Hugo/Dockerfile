@@ -98,6 +98,8 @@ ARG BUILD_DATE
 ARG VCS_REF
 ARG VCS_URL
 ARG VERSION
+ARG HUGO_VERSION
+ARG CADDY_VERSION
 LABEL org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.name="Hugo & Caddy" \
       org.label-schema.description="Hugo-${HUGO_VERSION} + Caddy:git,hugo-${CADDY_VERSION}" \

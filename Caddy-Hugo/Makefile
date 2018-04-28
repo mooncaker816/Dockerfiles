@@ -24,7 +24,6 @@ docker_build:
 		--build-arg VCS_URL=`git config --get remote.origin.url` \
 		--build-arg PLUGINS="git,hugo" \
 		-t $(DOCKER_IMAGE):$(DOCKER_TAG) .
-	docker rmi $(docker images -f "dangling=true" -q)
 
 docker_push:
 	# Tag image as latest

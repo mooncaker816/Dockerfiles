@@ -75,7 +75,7 @@ RUN /usr/bin/hugo version
 #
 # Final image
 #
-FROM golang:1.10-alpine
+FROM alpine:3.7
 
 RUN apk add --no-cache git openssh-client 
 

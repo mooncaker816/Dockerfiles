@@ -13,9 +13,9 @@ DOCKER_TAG = $(CODE_VERSION)-$(GIT_COMMIT)
 
 
 docker_build:
-    docker build \
-        --build-arg VCS_REF=$(GIT_COMMIT) \
-        --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+	docker build \
+		--build-arg VCS_REF=$(GIT_COMMIT) \
+		--build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
 		--build-arg VERSION=$(CODE_VERSION) \
 		--build-arg VCS_URL=`git config --get remote.origin.url` \
 		-t $(DOCKER_IMAGE):$(DOCKER_TAG) .

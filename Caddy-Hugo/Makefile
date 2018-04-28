@@ -13,7 +13,7 @@ DOCKER_TAG = $(CODE_VERSION)-$(GIT_COMMIT)
 
 
 docker_build:
-    @docker build \
+    docker build \
         --build-arg VCS_REF=$(GIT_COMMIT) \
         --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
 		--build-arg VERSION=$(CODE_VERSION) \
@@ -29,4 +29,4 @@ docker_push:
 	docker push $(DOCKER_IMAGE):latest
 
 output:
-	@echo Docker Image: $(DOCKER_IMAGE):$(DOCKER_TAG)
+	echo Docker Image: $(DOCKER_IMAGE):$(DOCKER_TAG)

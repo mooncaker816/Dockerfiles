@@ -6,9 +6,9 @@ ARG PLUGINS=""
 RUN apk add --no-cache git openssh-client 
 
 # caddy
-RUN git clone https://github.com/mholt/caddy -b "v${VERSION}" /go/src/github.com/mholt/caddy \
+RUN git clone https://github.com/mholt/caddy -b "v${CADDY_VERSION}" /go/src/github.com/mholt/caddy \
     && cd /go/src/github.com/mholt/caddy \
-    && git checkout -b "v${VERSION}"
+    && git checkout -b "v${CADDY_VERSION}"
 
 # plugin helper
 RUN go get -v github.com/abiosoft/caddyplug/caddyplug

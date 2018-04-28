@@ -7,6 +7,7 @@ build: docker_build output
 DOCKER_IMAGE ?= mooncaker816/Caddy-Hugo
 BINARY ?= microscaling
 
+CODE_VERSION = $(strip $(shell cat VERSION))
 # Get the latest commit.
 GIT_COMMIT = $(strip $(shell git rev-parse --short HEAD))
 DOCKER_TAG = $(CODE_VERSION)-$(GIT_COMMIT)

@@ -3,7 +3,7 @@ FROM golang:1.10-alpine as build
 ARG CADDY_VERSION="0.10.14"
 ARG PLUGINS=""
 
-RUN apk add --no-cache git openssh-client 
+RUN apk add --no-cache git
 
 # caddy
 RUN git clone https://github.com/mholt/caddy -b "v${CADDY_VERSION}" /go/src/github.com/mholt/caddy \
@@ -75,7 +75,9 @@ RUN /usr/bin/hugo version
 #
 # Final image
 #
-FROM scratch
+FROM golang:1.10-alpine
+
+RUN apk add --no-cache git openssh-client 
 
 # copy caddy binary and ca certs
 COPY --from=compress /usr/bin/caddy /bin/caddy

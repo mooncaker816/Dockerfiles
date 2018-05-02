@@ -8,7 +8,7 @@ release: docker_build docker_push output
 
 # Image and binary can be overidden with env vars.
 DOCKER_IMAGE ?= mooncaker816/caddy-hugo
-BINARY ?= microscaling
+BINARY ?= caddy
 
 CODE_VERSION = $(strip $(shell cat VERSION))
 # Get the latest commit.
@@ -23,7 +23,7 @@ docker_build:
 		--build-arg VERSION=$(CODE_VERSION) \
 		--build-arg VCS_URL=`git config --get remote.origin.url` \
 		--build-arg PLUGINS="git,hugo" \
-		--build-arg HUGO_VERSION="0.40.1" \
+		--build-arg HUGO_VERSION="0.40.2" \
 		--build-arg CADDY_VERSION="0.10.14" \
 		-t $(DOCKER_IMAGE):$(DOCKER_TAG) .
 

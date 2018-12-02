@@ -22,9 +22,8 @@ docker_build:
 		--build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
 		--build-arg VERSION=$(CODE_VERSION) \
 		--build-arg VCS_URL=`git config --get remote.origin.url` \
-		--build-arg PLUGINS="git,hugo" \
+		--build-arg PLUGINS="http.git,http.hugo" \
 		--build-arg HUGO_VERSION="0.52.0" \
-		--build-arg CADDY_VERSION="0.11.1" \
 		-t $(DOCKER_IMAGE):$(DOCKER_TAG) .
 
 docker_push:

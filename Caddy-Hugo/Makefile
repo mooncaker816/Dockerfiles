@@ -23,8 +23,8 @@ docker_build:
 		--build-arg VERSION=$(CODE_VERSION) \
 		--build-arg VCS_URL=`git config --get remote.origin.url` \
 		--build-arg PLUGINS="git,hugo" \
-		--build-arg HUGO_VERSION="0.40.2" \
-		--build-arg CADDY_VERSION="0.10.14" \
+		--build-arg HUGO_VERSION="0.52.0" \
+		--build-arg CADDY_VERSION="0.11.1" \
 		-t $(DOCKER_IMAGE):$(DOCKER_TAG) .
 
 docker_push:

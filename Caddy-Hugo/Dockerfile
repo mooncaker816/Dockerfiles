@@ -2,7 +2,7 @@ FROM alpine as build
 
 ARG PLUGINS=""
 
-RUN apk add --no-cache bash
+RUN apk add --no-cache bash curl
 
 # caddy
 RUN curl https://getcaddy.com | bash -s personal "${PLUGINS}"

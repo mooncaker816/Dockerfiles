@@ -1,4 +1,3 @@
 #!/bin/sh
 
-caddy --conf=/etc/Caddyfile --log=stdout --agree=true
-filebrowser
+filebrowser && caddy --conf=/etc/Caddyfile --log=stdout --agree=true

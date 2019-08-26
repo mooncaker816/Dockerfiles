@@ -12,8 +12,9 @@ RUN tar xzf /usr/local/filebrowser/linux-amd64-filebrowser.tar.gz filebrowser -C
 	&& rm /usr/local/filebrowser/linux-amd64-filebrowser.tar.gz
 
 # copy default caddyfile
-COPY Caddyfile /etc/caddy/Caddyfile
+COPY Caddyfile /etc/Caddyfile
 COPY .filebrowser.json /etc/filebrowser/.filebrowser.json
+COPY entrypoint.sh /entrypoint.sh
+RUN ["chmod","+x","/entrypoint.sh"]
 
-ENTRYPOINT ["caddy"]
-CMD ["--conf", "/etc/caddy/Caddyfile", "--log", "stdout","--agree=true","filebrowser"]
+ENTRYPOINT ["/entrypoint.sh"]

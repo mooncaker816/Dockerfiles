@@ -1,0 +1,8 @@
+{
+    "port": 8088,
+    "baseURL": "",
+    "address": "",
+    "log": "stdout",
+    "database": "/usr/local/database.db",
+    "root": "/srv"
+  }

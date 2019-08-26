@@ -1,5 +1,7 @@
 FROM alpine
 
+ARG PLUGINS=""
+
 RUN apk add --no-cache bash curl ca-certificates
 
 # caddy
